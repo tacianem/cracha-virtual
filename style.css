@@ -1,0 +1,96 @@
+* {
+  /*for all elements*/
+  margin: 0;
+}
+
+html,
+body {
+  --black: hsl(240, 6%, 13%);
+  --grey: hsl(240, 9%, 89%);
+
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  display: grid;
+  place-items: center;
+
+  /* background:rgb(250, 215, 250) */
+}
+
+main {
+  background: url(images/drawing.png);
+  width: 375px;
+  height: 812px;
+}
+
+.container {
+  max-height: 250px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+
+  color: var(--black);
+}
+
+.avatar {
+  width: 10rem;
+  margin: 11.5rem auto 0;
+
+  position: relative; /* o absolute ali do span vai ser aplicado em relação
+  a essa imagem agora e não à pg toda */
+}
+
+.avatar span {
+  position: absolute; /* faz a imagem "flutuar" por cima do resto */
+  top: -15px;
+
+  z-index: 1; /* eixo z = profundidade */
+}
+
+.avatar > img {
+  /* > pega a primeira tag de img */
+  width: 10rem;
+  height: 11.5rem;
+  object-fit: cover;
+
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  /* bennettfeely.com/clippy/ -clippy css */
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+a {
+  color: rgb(243, 17, 111);
+  text-decoration: none;
+
+  margin-top: 0.25rem;
+
+  display: flex; /* pra posicionar os elementos ao longo da reta principal */
+
+  gap: 0.75rem; /* esses dois attrib aparecem por causa do flex! */
+  justify-content: center;
+
+  align-items: center; /* garante que items estão no meio da linha e coluna */
+}
+
+p {
+  margin-top: 2rem;
+}
+
+ul {
+  margin-top: 4rem;
+
+  list-style: none;
+  padding: 0;
+
+  display: flex;
+  gap: 0.5rem;
+
+  justify-content: center;
+}
